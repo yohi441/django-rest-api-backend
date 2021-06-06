@@ -8,6 +8,8 @@ django = "*"
 djangorestframework = "*"
 pillow = "*"
 django-environ = "*"
+django-autoslug = "*"
+coverage = "*"
 
 [dev-packages]
 

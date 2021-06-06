@@ -11,18 +11,23 @@ from django.contrib.auth.models import User
 
 
 
+
 class ProductViewSet(viewsets.ModelViewSet):
     """
     This viewset automatically provides `list`, `create`, `retrieve`,
     `update` and `destroy` actions.
     """
-    queryset = Product.objects.all()
+    queryset = Product.objects.active()
     serializer_class = ProductSerializer
+    lookup_field = 'slug'
+    
 
 
 class ProductTagViewSet(viewsets.ModelViewSet):
     queryset = ProductTag.objects.all()
     serializer_class = ProductTagSerializer
+   
+    
 
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
